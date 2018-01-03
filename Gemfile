@@ -62,3 +62,4 @@ gem "twitter-bootstrap-rails", "~> 2.2.8"
 # gem "actionpack", ~> "4.2.5.1"
 # gem "actionview", ~> "4.2.7.1"
 # gem "nokogiri", ~> "1.8.1"
+gem 'rake', '< 11.0'
