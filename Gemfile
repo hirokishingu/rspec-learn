@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.14.1'
+gem 'rails', '4.2.7.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -59,4 +59,6 @@ end
 
 gem "twitter-bootstrap-rails", "~> 2.2.8"
 
-# gem "actionpack" ~> "4.2.5.1"
+# gem "actionpack", ~> "4.2.5.1"
+# gem "actionview", ~> "4.2.7.1"
+# gem "nokogiri", ~> "1.8.1"
