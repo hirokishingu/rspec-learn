@@ -58,3 +58,5 @@ group :test do
 end
 
 gem "twitter-bootstrap-rails", "~> 2.2.8"
+
+# gem "actionpack" ~> "4.2.5.1"
