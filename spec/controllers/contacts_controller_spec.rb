@@ -1,7 +1,39 @@
 require 'spec_helper'
 
 describe ContactsController do
+  before :each do
+    @contact = create(:contact, firstname: "Lawrence", lastname: "Smith")
+  end
+
+  shared_examples("public access to contacts") do
+    describe "GET #index" do
+      it "populates an array of contacts" do
+        get :index
+        expect(assigns(:contacts)).to match_array [@contact]
+      end
+
+      it "renders the :index template" do
+        get :index
+        expect(response).to render_template :index
+      end
+    end
+
+    describe "GET #show" do
+      it "assigns the requested contact to @contact" do
+        get :show, id: @contact
+        expect(assigns(:contact)).to eq @contact
+      end
+
+      it "renders the :show template" do
+        get :show, id: @contact
+        expect(response).to render_template :show
+      end
+    end
+  end
+
   describe "guest access" do
+    it_behaves_like "public access to contacts"
+    
     describe "GET #new" do
       it "requires login" do
         get :new
@@ -90,7 +122,7 @@ describe ContactsController do
     end
 
     describe "GET #new" do
-      it "assings a new Contact to @contact" do
+      it "assigns a new Contact to @contact" do
         get :new
         expect(assigns(:contact)).to be_a_new(Contact)
       end
